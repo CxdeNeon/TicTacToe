@@ -8,7 +8,7 @@ namespace TicTacToe
         
         public Spielfeld()
         {
-            Fields[0,0] = "O";
+            Fields[0,0] = "X";
         }
     }
 }
