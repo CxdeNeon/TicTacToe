@@ -199,7 +199,6 @@
             this.button11.TabIndex = 27;
             this.button11.Text = "Reset";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button11_MouseClick);
             // 
             // Form1
             // 

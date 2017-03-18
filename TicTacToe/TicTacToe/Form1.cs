@@ -32,66 +32,73 @@ namespace TicTacToe
             int red = rnd.Next(1, 255);
             int green = rnd.Next(1, 255);
             int blue = rnd.Next(1, 255);
-            _ende = false;
+            
 
             button1.BackColor = Color.FromArgb(red, green, blue);
             listBox1.ScrollAlwaysVisible = false;
+            if (!_ende)
+            {
+                listBox1.Items.Add("Spiel wurde bereits gestartet");
+            }
+            else
+            {
+                listBox1.Items.Add("Spiel wurde gestartet");
+            }
+            _ende = false;
 
-            listBox1.Items.Add("Spiel wurde gestartet");
-            
         }
 
-//        private void ButtonClick(object sender, EventArgs e)
-//        {
-//            listBox1.SelectedIndex = listBox1.Items.Count -1;
-//
-//            Button button = (Button) sender;
-//            if (_ende == true)
-//            {
-//                reset();
-//            }
-//            else
-//            { 
-//
-//
-//                    switch (button.Tag.ToString())
-//                    {
-//                        case "[0,0]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[0,1]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[0,2]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[1,0]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[1,1]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[1,2]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[2,0]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[2,1]":
-//                            ClickAction(button);
-//                            break;
-//
-//                        case "[2,2]":
-//                            ClickAction(button);
-//                            break;
-//                    }
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
+
+            Button button = (Button)sender;
+            if (_ende == true)
+            {
+                reset();
+            }
+            else
+            {
+
+
+                switch (button.Tag.ToString())
+                {
+                    case "[0,0]":
+                        ClickAction(button);
+                        break;
+
+                    case "[0,1]":
+                        ClickAction(button);
+                        break;
+
+                    case "[0,2]":
+                        ClickAction(button);
+                        break;
+
+                    case "[1,0]":
+                        ClickAction(button);
+                        break;
+
+                    case "[1,1]":
+                        ClickAction(button);
+                        break;
+
+                    case "[1,2]":
+                        ClickAction(button);
+                        break;
+
+                    case "[2,0]":
+                        ClickAction(button);
+                        break;
+
+                    case "[2,1]":
+                        ClickAction(button);
+                        break;
+
+                    case "[2,2]":
+                        ClickAction(button);
+                        break;
+                }
                 if (Wintest() == true)
                 {
                     reset();
@@ -132,29 +139,29 @@ namespace TicTacToe
 
         }
 
-//        private void ClickAction(Button button)
-//        {
-//            if (!button.Text.Equals("X") && !button.Text.Equals("O"))
-//            {
-//                listBox1.Items.Add(button.Text + " wurde gedrückt");
-//                if (_zugfolge == true)
-//                {
-//                    button.Text = "X";
-//                    _zugfolge = false;
-//                }
-//                else
-//                {
-//                    button.Text = "O";
-//                    _zugfolge = true;
-//                }
-//            }
-//            else
-//            {
-//                listBox1.Items.Add(button.AccessibleDescription + " ist bereits belegt");
-//                
-//            }
-//
-//        }
+        private void ClickAction(Button button)
+        {
+            if (!button.Text.Equals("X") && !button.Text.Equals("O"))
+            {
+                listBox1.Items.Add(button.Text + " wurde gedrückt");
+                if (_zugfolge == true)
+                {
+                    button.Text = "X";
+                    _zugfolge = false;
+                }
+                else
+                {
+                    button.Text = "O";
+                    _zugfolge = true;
+                }
+            }
+            else
+            {
+                listBox1.Items.Add(button.AccessibleDescription + " ist bereits belegt");
+
+            }
+
+        }
 
         private bool Wintest()
         {
